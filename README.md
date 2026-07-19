@@ -1,4 +1,4 @@
-# Simon Says 🎮 | Ultimate Edition
+# Simon Says 🎮 
 
 A visually stunning, high-performance, and feature-rich implementation of the classic **Simon Says** memory game built with vanilla web technologies.
 
@@ -40,8 +40,3 @@ To run via a local development server:
 3. Open [http://localhost:8080/simon.html](http://localhost:8080/simon.html) in your browser.
 
 ---
-
-## 🐛 Bug Fixes & Code Enhancements
-- **Green Color Bug Fixed**: Resolved an index limitation where the green button (`index 3`) was omitted from random selection in JavaScript.
-- **Sequential Playback**: Adjusted pattern presentation to sequentially play audio/visual flashes with structured intervals.
-- **Hinglish Comments**: Maintained user's commenting style mixing Hindi and English for educational clarity.
