@@ -8,42 +8,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mohsinsays.css">
+    
+    <!-- App Icons and PWA Manifest -->
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#58cc02">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
 
     <div class="game-container" id="game-container">
-        <header>
-            <h1>Mohsin Says 🦉</h1>
-            <p class="tagline">Repeat the pattern shown by Mohsin. Score points as you advance!</p>
-        </header>
+        <!-- Left Side: Controls & Info -->
+        <div class="game-info-side">
+            <header>
+                <h1>Mohsin Says 🦉</h1>
+                <p class="tagline">Repeat the pattern shown by Mohsin. Score points as you advance!</p>
+            </header>
 
-        <div class="scoreboard">
-            <div class="score-card">
-                <span class="score-label">LEVEL</span>
-                <span class="score-val" id="level-val">0</span>
+            <div class="scoreboard">
+                <div class="score-card">
+                    <span class="score-label">LEVEL</span>
+                    <span class="score-val" id="level-val">0</span>
+                </div>
+                <div class="score-card highlight">
+                    <span class="score-label">HIGH SCORE</span>
+                    <span class="score-val" id="high-score-val">0</span>
+                </div>
             </div>
-            <div class="score-card highlight">
-                <span class="score-label">HIGH SCORE</span>
-                <span class="score-val" id="high-score-val">0</span>
+
+            <h2 id="status-text">Press <span class="accent">Start Game</span> to Play</h2>
+
+            <div class="control-panel">
+                <button id="start-btn" class="action-btn start">Start Game</button>
+                <button id="sound-btn" class="action-btn sound-toggle">
+                    <span id="sound-icon">🔊</span> <span id="sound-text">Sound On</span>
+                </button>
+            </div>
+
+            <!-- Keyboard guide (visible on desktop) -->
+            <div class="keyboard-guide">
+                <p>Keyboard Controls</p>
+                <div class="key-badges">
+                    <span><kbd>Q</kbd> Yellow</span>
+                    <span><kbd>W</kbd> Red</span>
+                    <span><kbd>A</kbd> Purple</span>
+                    <span><kbd>S</kbd> Green</span>
+                </div>
+                <div class="key-badges-row">
+                    <span><kbd>Space</kbd> / <kbd>Enter</kbd> Start Game</span>
+                </div>
+            </div>
+
+            <!-- Theme selector -->
+            <div class="theme-selector">
+                <button class="theme-btn active" data-theme="light" aria-label="Light mode">☀️ Light</button>
+                <button class="theme-btn" data-theme="dark" aria-label="Dark mode">🌙 Dark</button>
             </div>
         </div>
 
-        <h2 id="status-text">Press <span class="accent">Start Game</span> to Play</h2>
-
-        <div class="btn-container">
-            <button class="btn yellow" id="yellow" aria-label="Yellow pad"></button>
-            <button class="btn red" id="red" aria-label="Red pad"></button>
-            <button class="btn purple" id="purple" aria-label="Purple pad"></button>
-            <button class="btn green" id="green" aria-label="Green pad"></button>
-        </div>
-
-        <div class="control-panel">
-            <button id="start-btn" class="action-btn start">Start Game</button>
-            <button id="sound-btn" class="action-btn sound-toggle">
-                <span id="sound-icon">🔊</span> <span id="sound-text">Sound On</span>
-            </button>
+        <!-- Right Side: Colored Pads -->
+        <div class="game-board-side">
+            <div class="btn-container">
+                <button class="btn yellow" id="yellow" aria-label="Yellow pad">
+                    <span class="key-hint">Q</span>
+                </button>
+                <button class="btn red" id="red" aria-label="Red pad">
+                    <span class="key-hint">W</span>
+                </button>
+                <button class="btn purple" id="purple" aria-label="Purple pad">
+                    <span class="key-hint">A</span>
+                </button>
+                <button class="btn green" id="green" aria-label="Green pad">
+                    <span class="key-hint">S</span>
+                </button>
+            </div>
         </div>
     </div>
 

@@ -4,11 +4,13 @@ A visually stunning, high-performance, and feature-rich implementation of the cl
 
 ## ✨ Features
 
-- **Glassmorphic Glass UI**: Premium glassmorphic cards using CSS variable systems, smooth gradients, glowing drop shadows, and modern font face integrations.
+- **Responsive Layout & Adaptive UI**: Beautiful side-by-side console interface on desktop, and stacked, immersive app-like layout on mobile devices.
+- **Built-in Light & Dark Themes**: Interactive theme selector with persistent preferences saved directly to `localStorage`.
+- **Keyboard Controls**: Fully playable using keyboard keys (`Q` for Yellow, `W` for Red, `A` for Purple, `S` for Green) with `Space`/`Enter` shortcuts to start.
 - **Micro-interactions & Motion**: Smooth hover scales, card shakes, and screen flash indicators on failure utilizing modern CSS transform properties and animations.
 - **Synthesized Audio System**: Utilizes the native **Web Audio API** to generate musical notes dynamically on keypresses/clicks (avoiding bulky external audio resources).
 - **Controls & Accessibility**: 
-  - Mobile-friendly "Start Game" button for touchscreens, alongside traditional Keyboard `Enter` press support.
+  - Mobile-friendly "Start Game" button for touchscreens.
   - Sound customization (Mute/Unmute toggle).
   - Input lock during pattern display to prevent accidental clicks while Mohsin is showing the pattern.
 - **Persistence**: High score tracking saved locally across sessions using `localStorage`.

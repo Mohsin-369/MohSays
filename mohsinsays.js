@@ -73,9 +73,31 @@ function playGameOverSound() {
     osc.stop(audioCtx.currentTime + 0.6);
 }
 
-document.addEventListener("keypress", function (event) {
-    if (started == false) {
-        startGame();
+const keyMap = {
+    q: "yellow",
+    w: "red",
+    a: "purple",
+    s: "green",
+    Q: "yellow",
+    W: "red",
+    A: "purple",
+    S: "green"
+};
+
+document.addEventListener("keydown", function (event) {
+    if (started === false) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            startGame();
+        }
+    } else {
+        let color = keyMap[event.key];
+        if (color) {
+            let btn = document.querySelector(`#${color}`);
+            if (btn && !document.querySelector(".btn-container").classList.contains("mohsin-turn-active")) {
+                btn.click();
+            }
+        }
     }
 });
 
@@ -218,4 +240,27 @@ function reset() {
     startBtn.innerText = "Start Game";
     startBtn.disabled = false;
     document.querySelector(".btn-container").classList.remove("mohsin-turn-active");
+}
+
+// Theme Selector Logic
+const themeButtons = document.querySelectorAll(".theme-btn");
+themeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        themeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        
+        const theme = btn.getAttribute("data-theme");
+        document.body.classList.remove("theme-dark");
+        if (theme === "dark") {
+            document.body.classList.add("theme-dark");
+        }
+        localStorage.setItem("mohsinSaysTheme", theme);
+    });
+});
+
+// Load saved theme
+const savedTheme = localStorage.getItem("mohsinSaysTheme") || "light";
+const activeBtn = document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`);
+if (activeBtn) {
+    activeBtn.click();
 }

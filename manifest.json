@@ -1,0 +1,17 @@
+{
+  "short_name": "MohSays",
+  "name": "Mohsin Says",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#f7f7f7",
+  "theme_color": "#58cc02",
+  "display": "standalone",
+  "orientation": "portrait"
+}
