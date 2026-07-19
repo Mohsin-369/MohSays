@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says 🎮 | Duolingo Edition</title>
-    <!-- Google Fonts for beautiful rounded typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="simon.css">
 </head>
 <body>
-    <!-- Ambient background glowing spheres -->
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
 
@@ -21,7 +19,6 @@
             <p class="tagline">Repeat the pattern shown by Simon. Score points as you advance!</p>
         </header>
 
-        <!-- Scoreboard showing level and high score -->
         <div class="scoreboard">
             <div class="score-card">
                 <span class="score-label">LEVEL</span>
@@ -33,10 +30,8 @@
             </div>
         </div>
 
-        <!-- Dynamic Game Status Text -->
         <h2 id="status-text">Press <span class="accent">Start Game</span> to Play</h2>
 
-        <!-- Interactive Simon Buttons -->
         <div class="btn-container">
             <button class="btn yellow" id="yellow" aria-label="Yellow pad"></button>
             <button class="btn red" id="red" aria-label="Red pad"></button>
@@ -44,7 +39,6 @@
             <button class="btn green" id="green" aria-label="Green pad"></button>
         </div>
 
-        <!-- Controls for Game start and sound customization -->
         <div class="control-panel">
             <button id="start-btn" class="action-btn start">Start Game</button>
             <button id="sound-btn" class="action-btn sound-toggle">
