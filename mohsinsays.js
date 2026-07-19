@@ -13,7 +13,7 @@ let gameContainer = document.querySelector("#game-container");
 
 let started = false;
 let level = 0;
-let highScore = localStorage.getItem("simonHighScore") || 0;
+let highScore = localStorage.getItem("mohsinHighScore") || 0;
 highScoreVal.innerText = highScore;
 
 let audioCtx = null;
@@ -107,7 +107,7 @@ function startGame() {
     setTimeout(levelUp, 600);
 }
 
-// Simon ki selection flash animation
+// Mohsin ki selection flash animation
 function gameFlash(btn) {
     btn.classList.add("flash");
     setTimeout(function () {
@@ -128,8 +128,8 @@ function levelUp() {
     level++;
     levelVal.innerText = level;
     
-    h2.innerHTML = `Simon's Turn <span class="accent">...</span>`;
-    document.querySelector(".btn-container").classList.add("simon-turn-active");
+    h2.innerHTML = `Mohsin's Turn <span class="accent">...</span>`;
+    document.querySelector(".btn-container").classList.add("mohsin-turn-active");
 
     let randIdx = Math.floor(Math.random() * 4); 
     let randColor = btns[randIdx];
@@ -152,7 +152,7 @@ function playFullSequence() {
             if (index === gameSeq.length - 1) {
                 setTimeout(() => {
                     h2.innerHTML = `Your Turn <span class="accent">!</span>`;
-                    document.querySelector(".btn-container").classList.remove("simon-turn-active");
+                    document.querySelector(".btn-container").classList.remove("mohsin-turn-active");
                 }, 400);
             }
         }, delay);
@@ -170,7 +170,7 @@ function checkAns(idx) {
         
         if (level > highScore) {
             highScore = level;
-            localStorage.setItem("simonHighScore", highScore);
+            localStorage.setItem("mohsinHighScore", highScore);
             highScoreVal.innerText = highScore;
             highScoreVal.parentElement.classList.add("highlight");
         }
@@ -217,5 +217,5 @@ function reset() {
     
     startBtn.innerText = "Start Game";
     startBtn.disabled = false;
-    document.querySelector(".btn-container").classList.remove("simon-turn-active");
+    document.querySelector(".btn-container").classList.remove("mohsin-turn-active");
 }
